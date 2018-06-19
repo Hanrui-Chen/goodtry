@@ -110,17 +110,32 @@ def res_locations(loc_lists, params):
         # To see if it deserves to go in or not, calculate the distance of this spot from each establishment
         # If it complies with every instruction we wanted, then add it to the list that the heatmap will draw, hooray!
         add_item = True
+#        for j in range(len(all_combos[i])):
+#            t_loc = (all_combos[i][j]['geometry']['location']['lat'], all_combos[i][j]['geometry']['location']['lng'])
+#            candidate_dist = vincenty(candidate_loc, t_loc).miles
+#            if params[j]['req_type'] == 'closer_than' and candidate_dist > params[j]['dist']:
+#                add_item = False
+#            if params[j]['req_type'] == 'further_than' and candidate_dist < params[j]['dist']:
+#                add_item = False
+            # print("Targeting", params[j]['req_type'], params[j]['dist'])
+            # print("Got a distance of", candidate_dist)
+#        if add_item:
+#            final_latlongs.append(candidate_loc)
+            
         for j in range(len(all_combos[i])):
             t_loc = (all_combos[i][j]['geometry']['location']['lat'], all_combos[i][j]['geometry']['location']['lng'])
             candidate_dist = vincenty(candidate_loc, t_loc).miles
-            if params[j]['req_type'] == 'closer_than' and candidate_dist > params[j]['dist']:
+            t=0
+            if params[j]['req_type'] == 'closer_than':
+                t=-1
+            elif params[j]['req_type'] == 'further_than':
+                t=1
+            if candidate_dist -t* params[j]['dist']<0:
                 add_item = False
-            if params[j]['req_type'] == 'further_than' and candidate_dist < params[j]['dist']:
-                add_item = False
-            # print("Targeting", params[j]['req_type'], params[j]['dist'])
-            # print("Got a distance of", candidate_dist)
         if add_item:
             final_latlongs.append(candidate_loc)
+
+    return final_latlongs
     # print(len(final_latlongs))
     # print(final_latlongs[0])
     return final_latlongs
