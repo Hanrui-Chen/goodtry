@@ -40,15 +40,9 @@ def result():
     if request.method == 'POST':
         union_sq = (40.736278, -73.9912)
         result = request.form
-        ret_string = ''
-        # for x in result.keys():
-        #     addy_string = x + ": " + result[x] + "<br>"
-        #     ret_string += addy_string
-        # return ret_string
         user_inputs = []
         target_address = result['target_address']
         target_coords = mapcalc.get_coords_from_address(target_address)
-        # return str(target_coords) + "<br>"
         for i in range(2):
             dist_key = 'dist_' +str(i+1)
             req_type_key = 'req_type_' + str(i+1)
