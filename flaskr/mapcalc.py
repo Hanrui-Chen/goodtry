@@ -133,9 +133,7 @@ def res_locations(loc_lists, params):
             if candidate_dist -t* params[j]['dist']<0:
                 add_item = False
         if add_item:
-            locc=gmaps.reverse_geocode(candidate_loc)
-            locc_coords=(locc[0]['geometry']['location']['lat'], locc[0]['geometry']['location']['lng'])
-            final_latlongs.append(locc_coords)
+            final_latlongs.append(candidate_loc)
 
     return final_latlongs
     # print(len(final_latlongs))
