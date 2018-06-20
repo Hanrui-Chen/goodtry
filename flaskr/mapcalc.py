@@ -138,7 +138,6 @@ def res_locations(loc_lists, params):
     return final_latlongs
     # print(len(final_latlongs))
     # print(final_latlongs[0])
-    return final_latlongs
 
 # this next line should really be in the other script tbh
 # heatmap_points = res_locations(big_list_of_results, dummy_user_inputs)
