@@ -5,6 +5,7 @@ import googlemaps
 import googlemaps.places as places_api
 from geopy.distance import vincenty
 import itertools
+import geocoder
 
 api_key = "AIzaSyBJLSm__jnoJbfAiL0fSQvpLQM5H9UuBoY"
 
@@ -148,12 +149,19 @@ def res_locations(loc_lists, params):
 
 def formatted_google_maps_lines(s):  
 #    s = validate_coordinates(heatmap_points)  
+    g=googlemaps.Client(key=api_key)
     point_code_lines = ""  
-    for i in range(len(s)):  
-        if i == (len(s) - 1): 
-            line = "new google.maps.LatLng" + str(s[i])
-        else:
-            line = "new google.maps.LatLng" + str(s[i]) + ","
+    p=''
+    for i in range(len(s)):
+        revc=g.reverse_geocode(s[i])
+        pp=geocoder.google(revc[0]['address_components'][0]['long_name'])
+        line=''
+        if i == (len(s) - 1) and pp.latlng!=None:
+            p=((pp.latlng[0],pp.latlng[1]))
+            line = "new google.maps.LatLng" + str(p)
+        elif i!=(len(s)-1) and pp.latlng!=None:
+            p=((pp.latlng[0],pp.latlng[1]))
+            line = "new google.maps.LatLng" + str(p) + ","
         point_code_lines += line
     return point_code_lines
 
