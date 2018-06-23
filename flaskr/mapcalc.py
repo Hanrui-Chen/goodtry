@@ -37,12 +37,13 @@ def get_coords_from_address(address):
 
 
 # function to build and store required search terms
-def result_list(req, loc):
+def result_list(req, loc,ra):
     # req is a dict representing one search parameter
     # loc is a latitude-longitude tuple
     search_term = req['search_term']
     gmaps = googlemaps.Client(key=api_key)
-    gsearch = googlemaps.places.places(gmaps, search_term, loc)
+    r=int(ra*1609)
+    gsearch = googlemaps.places.places(gmaps, search_term, location=loc,radius=r)
     return gsearch['results']
 
 
