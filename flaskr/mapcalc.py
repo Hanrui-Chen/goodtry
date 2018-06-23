@@ -7,8 +7,8 @@ from geopy.distance import vincenty
 import itertools
 import geocoder
 
-api_key = "AIzaSyBJLSm__jnoJbfAiL0fSQvpLQM5H9UuBoY"
-
+#api_key = "AIzaSyBJLSm__jnoJbfAiL0fSQvpLQM5H9UuBoY"
+api_key='AIzaSyDNvdrZ_HEtfsuPYHV9UvZGc41BSFBolOM'
 
 def verify_import():
     return "hey it worked!"
