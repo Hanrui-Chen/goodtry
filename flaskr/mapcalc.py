@@ -55,7 +55,7 @@ def result_list(req, loc,ra):
 #     big_list_of_results.append(result_list(param, union_sq))
 
 
-def res_locations(loc_lists, params):
+def res_locations(loc_lists, params,co,dis):
     # Function that takes all the user input and spits out an array of ideal lat-long locations that fit the params
     # loc_lists is a list of lists
     # each inner list contains (dict) locations of the same type of establishment - gym, church etc.
@@ -127,12 +127,13 @@ def res_locations(loc_lists, params):
         for j in range(len(all_combos[i])):
             t_loc = (all_combos[i][j]['geometry']['location']['lat'], all_combos[i][j]['geometry']['location']['lng'])
             candidate_dist = vincenty(candidate_loc, t_loc).miles
+            di=vincenty(candidate_loc,co).miles
             t=0
             if params[j]['req_type'] == 'closer_than':
                 t=-1
             elif params[j]['req_type'] == 'further_than':
                 t=1
-            if candidate_dist -t* params[j]['dist']<0:
+            if candidate_dist -t* params[j]['dist']<0 or di>dis:
                 add_item = False
         if add_item:
             final_latlongs.append(candidate_loc)
@@ -153,15 +154,15 @@ def formatted_google_maps_lines(s):
     point_code_lines = ""  
     p=''
     for i in range(len(s)):
-        revc=g.reverse_geocode(s[i])
-        pp=geocoder.google(revc[0]['address_components'][0]['long_name'])
+#        revc=g.reverse_geocode(s[i])
+#        pp=geocoder.google(revc[0]['address_components'][0]['long_name'])
         line=''
-        if i == (len(s) - 1) and pp.latlng!=None:
-            p=((pp.latlng[0],pp.latlng[1]))
-            line = "new google.maps.LatLng" + str(p)
-        elif i!=(len(s)-1) and pp.latlng!=None:
-            p=((pp.latlng[0],pp.latlng[1]))
-            line = "new google.maps.LatLng" + str(p) + ","
+        if i == (len(s) - 1):# and pp.latlng!=None:
+#            p=((pp.latlng[0],pp.latlng[1]))
+            line = "new google.maps.LatLng" + str(s[i])
+        elif i!=(len(s)-1):# and pp.latlng!=None:
+#            p=((pp.latlng[0],pp.latlng[1]))
+            line = "new google.maps.LatLng" + str(s[i]) + ","
         point_code_lines += line
     return point_code_lines
 
