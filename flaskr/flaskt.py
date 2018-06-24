@@ -43,6 +43,7 @@ def result():
         user_inputs = []
         target_address = result['target_address']
         dist=float(result['dist'])
+        a=float(result['unit'])
         target_coords = mapcalc.get_coords_from_address(target_address)
         for i in range(2):
             dist_key = 'dist_' +str(i+1)
@@ -54,6 +55,6 @@ def result():
         list_of_results = []
         for param in user_inputs:
             list_of_results.append(mapcalc.result_list(param, target_coords,dist))
-        final_coords = mapcalc.res_locations(list_of_results, user_inputs,target_coords,dist)
+        final_coords = mapcalc.res_locations(list_of_results, user_inputs,target_coords,dist*a)
         # return str(mapcalc.formatted_google_maps_lines(final_coords))
         return render_template("heatmap.html", map_center_lat = target_coords[0], map_center_lng = target_coords[1], points_list = mapcalc.formatted_google_maps_lines(final_coords))
