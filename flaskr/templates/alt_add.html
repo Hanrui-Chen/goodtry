@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Good Living</title>
@@ -30,11 +30,21 @@
 					<span class="contact2-form-title">
 						Good Living
 					</span>
-
-					<label for="target_address" class="fb-text-label"><h4>Search near…</h4></label>
+					<label for="dis" class="fb-text-label"><h4>Distance in</h4></label>
+					<input type="text" class="form-control" name="dis" id="dis"  required="required" maxlength="80" placeholder="0.8">
+					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
+					<class="radio-group">
+			                        <div class="radio-inline">
+			                            <input name="unit" id="Miles" required="required" aria-required="true" value="1" type="radio">
+			                            <label for="miles_or_meter-0">Miles</label>
+			                        </div>
+			                        <div class="radio-inline">
+			                            <input name="unit" id="Meters" required="required" aria-required="true" value="1/1609" type="radio">
+			                            <label for="miles_or_meter-1">Meters</label>
+			                        </div>
+					</div>
+					<label for="target_address" class="fb-text-label"><h4>Search from…</h4></label>
            				<input type="text" class="form-control" name="target_address" id="target_address" required="required" maxlength="140" placeholder="25 Union Square West, New York City, NY 10003">
-					<label for="dist" class="fb-text-label"><h4>Distance in mile</h4></label>
-					<input type="text" class="form-control" name="dist" id="dist"  required="required" maxlength="140" placeholder="0.8">
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
