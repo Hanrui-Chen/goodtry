@@ -45,12 +45,20 @@ def result():
         dist=float(result['dis'])
         a=float(result['unit'])
         target_coords = mapcalc.get_coords_from_address(target_address)
-        for i in range(2):
-            dist_key = 'dist_' +str(i+1)
-            req_type_key = 'req_type_' + str(i+1)
-            search_term_key = 'search_term_' + str(i+1)
-            search_item = mapcalc.add_user_inputs(result[req_type_key], result[dist_key], result[search_term_key])
-            user_inputs.append(search_item)
+        if result['search_term_3']=='':
+            for i in range(2):
+                dist_key = 'dist_' +str(i+1)
+                req_type_key = 'req_type_' + str(i+1)
+                search_term_key = 'search_term_' + str(i+1)
+                search_item = mapcalc.add_user_inputs(result[req_type_key], result[dist_key], result[search_term_key])
+                user_inputs.append(search_item)
+        else:
+            for i in range(3):
+                dist_key = 'dist_' +str(i+1)
+                req_type_key = 'req_type_' + str(i+1)
+                search_term_key = 'search_term_' + str(i+1)
+                search_item = mapcalc.add_user_inputs(result[req_type_key], result[dist_key], result[search_term_key])
+                user_inputs.append(search_item)
 
         list_of_results = []
         for param in user_inputs:
