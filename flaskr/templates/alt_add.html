@@ -155,15 +155,21 @@
 
         var slider2 = document.getElementById("distRange_2");
         var output2 = document.getElementById("dist_2_value");
+        var slider3 = document.getElementById("distRange_3");
+        var output3 = document.getElementById("dist_3_value");
 
 
         output1.innerHTML = getTrueVal(slider1);
         output2.innerHTML = getTrueVal(slider2);
+        output3.innerHTML = getTrueVal(slider3);
         slider1.oninput = function() {
           output1.innerHTML = getTrueVal(slider1);
         }
         slider2.oninput = function() {
           output2.innerHTML = getTrueVal(slider2);
+        }
+        slider3.oninput = function() {
+          output3.innerHTML = getTrueVal(slider3);
         }
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
