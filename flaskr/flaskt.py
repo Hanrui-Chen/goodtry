@@ -42,24 +42,38 @@ def result():
         result = request.form
         user_inputs = []
         target_address = result['target_address']
+        
+        #print('a')
+        result2=result.copy()
+        
+        #print(result2)
         dist=float(result['dis'])
         a=float(result['unit'])
         target_coords = mapcalc.get_coords_from_address(target_address)
-        if result['search_term_3']=='':
+       
+        if result['color3']=='3' or result['color3']=='pick an amenity':
             for i in range(2):
                 dist_key = 'dist_' +str(i+1)
                 req_type_key = 'req_type_' + str(i+1)
                 search_term_key = 'search_term_' + str(i+1)
-                search_item = mapcalc.add_user_inputs(result[req_type_key], result[dist_key], result[search_term_key])
+                color='color'+str(i+1)
+                if result2[color]!=str(i+1):
+                    result2[search_term_key]=result2[color]
+                #print(result2)
+                search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key])
                 user_inputs.append(search_item)
         else:
             for i in range(3):
                 dist_key = 'dist_' +str(i+1)
                 req_type_key = 'req_type_' + str(i+1)
                 search_term_key = 'search_term_' + str(i+1)
-                search_item = mapcalc.add_user_inputs(result[req_type_key], result[dist_key], result[search_term_key])
+                color='color'+str(i+1)
+                if result2[color]!=str(i+1):
+                    result2[search_term_key]=result2[color]
+                #print(result2)
+                search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key])
                 user_inputs.append(search_item)
-
+        #print(user_inputs)
         list_of_results = []
         for param in user_inputs:
             list_of_results.append(mapcalc.result_list(param, target_coords,dist*a))
