@@ -132,7 +132,7 @@
 
 				                    <label for="establishment_type" class="fb-text-label">from a: </label>
 
-				                    <select name="color1" onchange='checkvalue1(this.value)'> 
+				                    <select name="color1" onchange='checkvalue(this.value)'> 
 
     							<option>pick an amenity</option> 
 
@@ -214,7 +214,7 @@
 
 					<label for="establishment_type" class="fb-text-label">from a: </label>
 
-<select name="color2" onchange='checkvalue2(this.value)'> 
+<select name="color2" onchange='checkvalue(this.value)'> 
 
     <option>pick an amenity</option> 
 
@@ -292,7 +292,7 @@ function checkvalue2(val)
 
 				                    <label for="establishment_type" class="fb-text-label">from a: </label>
 
-				                    <select name="color3" onchange='checkvalue3(this.value)'> 
+				                    <select name="color3" onchange='checkvalue(this.value)'> 
 
     <option>pick an amenity</option> 
 
@@ -321,6 +321,17 @@ function checkvalue3(val)
        document.getElementsById('search_term_3').style.display='none';
 
 }
+function checkvalue(val)
+
+{
+    for(i=1;i<val+1;i++){
+    if(i==val){
+    document.getElementById('search_term_'+i).style.display='block';
+    			}			
+                            }
+
+}
+
 
 </script> 
 
