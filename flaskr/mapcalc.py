@@ -21,8 +21,8 @@ dummy_user_inputs = [
 ]
 
 
-def add_user_inputs(req_type, dist, search_term):
-    user_dict = {'req_type':req_type, 'dist':2**float(dist), 'search_term':search_term}
+def add_user_inputs(req_type, dist, search_term, unit):
+    user_dict = {'req_type':req_type, 'dist':unit*(2**float(dist)), 'search_term':search_term}
     return user_dict
 
 
