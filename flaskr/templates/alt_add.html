@@ -31,26 +31,25 @@
 					<span class="contact2-form-title">
 						Good Living
 					</span>
-					<label for="dis" class="fb-text-label"><h4>Distance in</h4></label>
+					
 					<input type="text" class="form-control" name="dis" id="dis"  required="required" maxlength="80" placeholder="0.8">
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 					<class="radio-group">
 			                        <div class="radio-inline">
-			                            <input name="unit" id="Miles" required="required" aria-required="true" value="1" type="radio">Miles
-			                          
-			                            <input name="unit" id="Meters" required="required" aria-required="true" value="0.6215" type="radio">Kms
+						    <label for="dis" class="fb-text-label"><h4>Distance in </h4></label>
+			                            <input name="unit" id="Miles" required="required" aria-required="true" value="1" type="radio">miles
+			                            <input name="unit" id="Meters" required="required" aria-required="true" value="0.6215" type="radio">kms
 			                            
 			                        </div>
 					</div>
-					<label for="target_address" class="fb-text-label"><h4>Search from…</h4></label>
+					
            				<input type="text" class="form-control" name="target_address" id="target_address" required="required" maxlength="140" placeholder="25 Union Square West, New York City, NY 10003">
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
+						<label for="target_address" class="fb-text-label"><h4>Search from…</h4></label>
 			                        <div class="radio-inline">
 			                            <input name="req_type_1" id="closer_than" required="required" aria-required="true" value="closer_than" type="radio">
 			                            <label for="closer_or_further-0">closer than</label>
-			                        </div>
-			                        <div class="radio-inline">
 			                            <input name="req_type_1" id="further_than" required="required" aria-required="true" value="further_than" type="radio">
 			                            <label for="closer_or_further-1">further than</label>
 			                        </div>
@@ -58,14 +57,14 @@
 
 					<div class="wrap-input2">
 						<div class="slidecontainer">
-				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_1" name = "dist_1"><br><span id="dist_1_value"></span></span>
+				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_1" name = "dist_1">&nbsp&nbsp&nbsp&nbsp<span id="dist_1_value"></span>
 				                </div>
 					</div>
 					<div class="wrap-input2 validate-input" data-validate = "Search term is required">
 						<div class="field-search_term">
 				                    <label for="establishment_type" class="fb-text-label">from a: </label>
-				                    <select name="color1" onchange='checkvalue(this.value)'> 
-    							<option>pick an amenity</option> 
+				                    <select name="color1" id=1 onchange='checkvalue(this.value,this.id)'> 
+    							<option value=''>pick an amenity</option> 
     							<option value="Gym">Gym</option>
 							<option value="Restaurant">Restaurant</option>
     							<option value="Laundry">Laundry</option>
@@ -89,8 +88,6 @@
 			                        <div class="radio-inline">
 			                            <input name="req_type_2" id="closer_than" required="required" aria-required="true" value="closer_than" type="radio">
 			                            <label for="closer_or_further-0">closer than</label>
-			                        </div>
-			                        <div class="radio-inline">
 			                            <input name="req_type_2" id="further_than" required="required" aria-required="true" value="further_than" type="radio">
 			                            <label for="closer_or_further-1">further than</label>
 			                        </div>
@@ -98,38 +95,31 @@
 
 					<div class="wrap-input2">
 						<div class="slidecontainer">
-				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_2" name = "dist_2"><br><span id="dist_2_value"></span>
+				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_2" name = "dist_2">&nbsp&nbsp&nbsp&nbsp<span id="dist_2_value"></span>
 				                </div>
 					</div>
 
 					<div class="wrap-input2 validate-input" data-validate = "Search term is required">
 					<div class="field-search_term">
 					<label for="establishment_type" class="fb-text-label">from a: </label>
-<select name="color2" onchange='checkvalue(this.value)'> 
-    <option>pick an amenity</option> 
+<select name="color2" id=2 onchange='checkvalue(this.value,this.id)'> 
+    <option value=''>pick an amenity</option> 
     <option value="Gym">Gym</option>
     <option value="Restaurant">Restaurant</option>
     <option value="Laundry">Laundry</option>
     <option value="2">others</option>
 </select> 
-<script type="text/javascript">
-function checkvalue2(val)
-{
-    if(val=="2")
-       document.getElementById('search_term_2').style.display='block';
-    else
-       document.getElementsById('search_term_2').style.display='none';
-}
+
+<script>
+
 </script> 
-<input type="text"  class="form-control" name="search_term_2" id="search_term_2" maxlength="40" style='display:none'/></div></div>
+<input type="text"  class="form-control" name="search_term_2" id="search_term_2" maxlength="40" style='display:none'/>
 
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
 			                            <input name="req_type_3" id="closer_than" aria-required="false" value="closer_than" type="radio">
 			                            <label for="closer_or_further-0">closer than</label>
-			                        </div>
-			                        <div class="radio-inline">
 			                            <input name="req_type_3" id="further_than" aria-required="false" value="further_than" type="radio">
 			                            <label for="closer_or_further-1">further than</label>
 			                        </div>
@@ -137,30 +127,30 @@ function checkvalue2(val)
 
 					<div class="wrap-input2">
 						<div class="slidecontainer">
-				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_3" name = "dist_3"><br><span id="dist_3_value"></span>
+				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_3" name = "dist_3">&nbsp&nbsp&nbsp&nbsp<span id="dist_3_value"></span>
 				                </div>
 					</div>
 
 					<div class="wrap-input2 validate-input" data-validate = "">
 						<div class="field-search_term">
 				                    <label for="establishment_type" class="fb-text-label">from a: </label>
-				                    <select name="color3" onchange='checkvalue(this.value)'> 
-    <option>pick an amenity</option> 
+				                    <select name="color3" id=3 onchange='checkvalue(this.value,this.id)'> 
+    <option value=''>pick an amenity</option> 
     <option value="Gym">Gym</option>
     <option value="Restaurant">Restaurant</option>
     <option value="Laundry">Laundry</option>
     <option value="3">others</option>
 </select> 
 <script type="text/javascript">
-function checkvalue3(val)
+function checkvalue3(val,id)
 {
-    if(val=="3")
-       document.getElementById('search_term_3').style.display='block';
-    else
-       document.getElementsById('search_term_3').style.display='none';
+
+    		if(id==val){
+    			  document.getElementById('search_term_'+3).style.display='block';
+    			  }		
 }
 </script> 
-<input type="text"  class="form-control" name="search_term_3" id="search_term_3" maxlength="40" style='display:none'/></div>
+<input type="text"  class="form-control" name="search_term_3" id="search_term_3" maxlength="40" style='display:none'/>
 				                </div>  
 					</div>
 
@@ -195,15 +185,27 @@ function checkvalue3(val)
 
 
 	<script>
-	function checkvalue(val)
+	function checkvalue(val,id)
 
 	{
-   		for(i=1;i<val+1;i++){
-    		if(i==val){
-    			  document.getElementById('search_term_'+i).style.display='block';
-    			  }			
-        }
+   		for(i=1;i<id+1;i++){
+    		if(i==val)
+    			  document.getElementById('search_term_'+i).style.display='block';	
+               
+			  }
+	
+var select=document.getElementById(id);
+for(v=1;v<id+1;v++){
+var e = document.getElementById(v);
+var str = e.options[e.selectedIndex].value;
+for (u=0;u<select.length;u++) {
+   if (v!=id && select.options[u].value==str && str!='') {
+     select.remove(u);
+   }
 
+}
+
+}
         }
 
 	
