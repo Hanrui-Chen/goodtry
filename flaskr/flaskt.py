@@ -102,9 +102,9 @@ def result():
 
         target_coords = mapcalc.get_coords_from_address(target_address)
 
-       
+       	print(result['color3'])
 
-        if result['color3']=='3' or result['color3']=='pick an amenity':
+        if result['color3']=='' or result['color3']=='3':
 
             for i in range(2):
 
@@ -144,7 +144,7 @@ def result():
 
                 #print(result2)
 
-                search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key])
+                search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key],a)
 
                 user_inputs.append(search_item)
 
