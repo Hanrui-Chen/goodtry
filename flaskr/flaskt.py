@@ -86,15 +86,14 @@ def result():
 
         target_address = result['target_address']
 
-        
 
         #print('a')
 
         result2=result.copy()
 
-        
+        le=int((len(result)-3)/4)
 
-        print(result2)
+        print(len(result))
 
         dist=float(result['dis'])
 
@@ -128,7 +127,7 @@ def result():
 
         else:
 
-            for i in range(3):
+            for i in range(le):
 
                 dist_key = 'dist_' +str(i+1)
 

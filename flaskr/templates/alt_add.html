@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Good Living</title>
@@ -23,7 +22,7 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
+	
 	<div class="bg-contact2" style="background-image: url('../static/images/bg-01.jpg');">
 		<div class="container-contact2">
 			<div class="wrap-contact2">
@@ -43,78 +42,80 @@
 			                        </div>
 					</div>
 					
+					<label for="target_address" class="fb-text-label"><h4>Search from…</h4></label>
            				<input type="text" class="form-control" name="target_address" id="target_address" required="required" maxlength="140" placeholder="25 Union Square West, New York City, NY 10003">
-					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
-						<div class="radio-group">
-						<label for="target_address" class="fb-text-label"><h4>Search from…</h4></label>
-			                        <div class="radio-inline">
-			                            <input name="req_type_1" id="closer_than" required="required" aria-required="true" value="closer_than" type="radio">
-			                            <label for="closer_or_further-0">closer than</label>
-			                            <input name="req_type_1" id="further_than" required="required" aria-required="true" value="further_than" type="radio">
-			                            <label for="closer_or_further-1">further than</label>
-			                        </div>
-					</div>
-
-					<div class="wrap-input2">
-						<div class="slidecontainer">
-				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_1" name = "dist_1">&nbsp&nbsp&nbsp&nbsp<span id="dist_1_value"></span>
-				                </div>
-					</div>
-					<div class="wrap-input2 validate-input" data-validate = "Search term is required">
+					
+					<div class="wrap-input2 validate-input" data-validate = "">
 						<div class="field-search_term">
 				                    <label for="establishment_type" class="fb-text-label">from a: </label>
 				                    <select name="color1" id=1 onchange='checkvalue(this.value,this.id)'> 
-    							<option value=''>pick an amenity</option> 
-    							<option value="Gym">Gym</option>
-							<option value="Restaurant">Restaurant</option>
-    							<option value="Laundry">Laundry</option>
-    							<option value="1">others</option>
-						    </select> 
-						    <script type="text/javascript">
-							function checkvalue1(val)
-							{
-    							     if(val==="1")
-       								document.getElementById('search_term_1').style.display='block';
-    						             else
-							        document.getElementsById('search_term_1').style.display='none';		
-							}
-						    </script> 
-						    <input type="text"  class="form-control" name="search_term_1" id="search_term_1" maxlength="40" style='display:none'/></div>
+    <option value=''>pick an amenity</option>
+    <option value="Gym">Gym</option>
+    <option value="Restaurant">Restaurant</option>
+    <option value="Laundry">Laundry</option>
+    <option value="1">others</option>
+</select> 
+<input type="text"  class="form-control" name="search_term_1" id="search_term_1" maxlength="40" style='display:none'/>
 				                </div>  
 					</div>
-
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
-			                            <input name="req_type_2" id="closer_than" required="required" aria-required="true" value="closer_than" type="radio">
+			                            <input name="req_type_1" id="closer_than" aria-required="false" value="closer_than" type="radio">
 			                            <label for="closer_or_further-0">closer than</label>
-			                            <input name="req_type_2" id="further_than" required="required" aria-required="true" value="further_than" type="radio">
+			                            <input name="req_type_1" id="further_than" aria-required="false" value="further_than" type="radio">
 			                            <label for="closer_or_further-1">further than</label>
 			                        </div>
 					</div>
 
 					<div class="wrap-input2">
 						<div class="slidecontainer">
-				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_2" name = "dist_2">&nbsp&nbsp&nbsp&nbsp<span id="dist_2_value"></span>
+				                  <input type="range" min="-3" max="3" value="0" class="slider" id="_1" name = "dist_1" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_1_value">1</span>
 				                </div>
 					</div>
 
-					<div class="wrap-input2 validate-input" data-validate = "Search term is required">
-					<div class="field-search_term">
-					<label for="establishment_type" class="fb-text-label">from a: </label>
-<select name="color2" id=2 onchange='checkvalue(this.value,this.id)'> 
-    <option value=''>pick an amenity</option> 
+					<div class="wrap-input2 validate-input" data-validate = "">
+						<div class="field-search_term">
+				                    <label for="establishment_type" class="fb-text-label">from a: </label>
+				                    <select name="color2" id=2 onchange='checkvalue(this.value,this.id)'> 
+    <option value=''>pick an amenity</option>
     <option value="Gym">Gym</option>
     <option value="Restaurant">Restaurant</option>
     <option value="Laundry">Laundry</option>
     <option value="2">others</option>
 </select> 
-
-<script>
-
-</script> 
 <input type="text"  class="form-control" name="search_term_2" id="search_term_2" maxlength="40" style='display:none'/>
+				                </div>  
+					</div>
+					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
+						<div class="radio-group">
+			                        <div class="radio-inline">
+			                            <input name="req_type_2" id="closer_than" aria-required="false" value="closer_than" type="radio">
+			                            <label for="closer_or_further-0">closer than</label>
+			                            <input name="req_type_2" id="further_than" aria-required="false" value="further_than" type="radio">
+			                            <label for="closer_or_further-1">further than</label>
+			                        </div>
+					</div>
 
+					<div class="wrap-input2">
+						<div class="slidecontainer">
+				                  <input type="range" min="-3" max="3" value="0" class="slider" id="_2" name = "dist_2" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_2_value">1</span>
+				                </div>
+					</div>
+
+<div class="wrap-input2 validate-input" data-validate = "">
+						<div class="field-search_term">
+				                    <label for="establishment_type" class="fb-text-label">from a: </label>
+				                    <select name="color3" id=3 onchange='checkvalue(this.value,this.id)'> 
+    <option value=''>pick an amenity</option>
+    <option value="Gym">Gym</option>
+    <option value="Restaurant">Restaurant</option>
+    <option value="Laundry">Laundry</option>
+    <option value="3">others</option>
+</select> 
+<input type="text"  class="form-control" name="search_term_3" id="search_term_3" maxlength="40" style='display:none'/>
+				                </div>  
+					</div>
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
@@ -127,47 +128,15 @@
 
 					<div class="wrap-input2">
 						<div class="slidecontainer">
-				                  <input type="range" min="-3" max="3" value="0" class="slider" id="distRange_3" name = "dist_3">&nbsp&nbsp&nbsp&nbsp<span id="dist_3_value"></span>
+				                  <input type="range" min="-3" max="3" value="0" class="slider" id="_3" name = "dist_3" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_3_value">1</span>
 				                </div>
 					</div>
 
-					<div class="wrap-input2 validate-input" data-validate = "">
-						<div class="field-search_term">
-				                    <label for="establishment_type" class="fb-text-label">from a: </label>
-				                    <select name="color3" id=3 onchange='checkvalue(this.value,this.id)'> 
-    <option value=''>pick an amenity</option> 
-    <option value="Gym">Gym</option>
-    <option value="Restaurant">Restaurant</option>
-    <option value="Laundry">Laundry</option>
-    <option value="3">others</option>
-</select> 
-<script type="text/javascript">
-function checkvalue3(val,id)
-{
+					
 
-    		if(id==val){
-    			  document.getElementById('search_term_'+3).style.display='block';
-    			  }		
-}
-</script> 
-<input type="text"  class="form-control" name="search_term_3" id="search_term_3" maxlength="40" style='display:none'/>
-				                </div>  
-					</div>
-
-
-
-					<div class="container-contact2-form-btn">
-						<div class="wrap-contact2-form-btn">
-							<div class="contact2-form-bgbtn"></div>
-							<button class="contact2-form-btn">
-								Find Someplace Nice
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+					<h2 id="myH2"></h2>
+					<div id="demo" onclick="myFunction()">Click me to add constrains.</div>
+					<div id="no" class="container-contact2-form-btn"><div class="wrap-contact2-form-btn"><div class="contact2-form-bgbtn"></div><button class="contact2-form-btn">Find Someplace Nice</button></div></div></form></div></div></div>
 
 
 
@@ -185,6 +154,18 @@ function checkvalue3(val,id)
 
 
 	<script>
+	var num=4;
+	function myFunction() {
+				//var elem = document.getElementById("no");
+				//elem.parentNode.removeChild(elem);
+				
+    				var a=num;
+				var h = document.getElementById("myH2");
+    				h.insertAdjacentHTML("afterend", '<div class="wrap-input2 validate-input" data-validate="Please choose an option"><div class="radio-group"><div class="radio-inline"><input name="req_type_'+a+'" id="closer_than" aria-required="false" value="closer_than" type="radio"><label for="closer_or_further-0">closer than</label><input name="req_type_'+a+'" id="further_than" aria-required="false" value="further_than" type="radio"><label for="closer_or_further-1">further than</label></div></div><div class="wrap-input2"><div class="slidecontainer"><input type="range" min="-3" max="3" value="0" class="slider" id="_'+a+'" name = "dist_'+num+'" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_'+a+'_value">1</span></div></div><div class="wrap-input2 validate-input" data-validate = ""><div class="field-search_term"><label for="establishment_type" class="fb-text-label">from a: </label><select name="color'+a+'" id='+a+' onchange="checkvalue(this.value,this.id)"><option value="">pick an amenity</option> <option value="Gym">Gym</option><option value="Restaurant">Restaurant</option><option value="Laundry">Laundry</option><option value="'+a+'">others</option></select><input type="text"  class="form-control" name="search_term_'+a+'" id="search_term_'+a+'" maxlength="40" style="display:none"/></div></div>');
+				window.num=a+1;
+
+}
+
 	function checkvalue(val,id)
 
 	{
@@ -207,33 +188,21 @@ for (u=0;u<select.length;u++) {
 
 }
         }
-
 	
-	var slider1 = document.getElementById("distRange_1");
-        var output1 = document.getElementById("dist_1_value");
-        var slider2 = document.getElementById("distRange_2");
-        var output2 = document.getElementById("dist_2_value");
-        var slider3 = document.getElementById("distRange_3");
-        var output3 = document.getElementById("dist_3_value");
-        output1.innerHTML = getTrueVal(slider1);
-        output2.innerHTML = getTrueVal(slider2);
-        output3.innerHTML = getTrueVal(slider3);
-        slider1.oninput = function() {
-          output1.innerHTML = getTrueVal(slider1);
-        }
-        slider2.oninput = function() {
-          output2.innerHTML = getTrueVal(slider2); 
-        }
-        slider3.oninput = function() {
-          output3.innerHTML = getTrueVal(slider3);
-        }
+	function findvalue(b){
+	var slider = document.getElementById(b);
+	var output = document.getElementById("dist"+b+"_value");
+	output.innerHTML = getTrueVal(slider);
+	}
+
+
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 	gtag('config', 'UA-23581568-13');
 	function getTrueVal(slider){
 		var trueVal = parseInt(slider.value);
-		trueVal = Math.pow(2, trueVal)
+		trueVal = Math.pow(2, trueVal);
 		if (document.getElementById("Miles").checked == true){
 		return trueVal+' Mile(s)';
 		}
