@@ -93,17 +93,16 @@ def result():
 
         le=int((len(result)-3)/4)
 
-        print(len(result))
-
+        print(result)
         dist=float(result['dis'])
 
         a=float(result['unit'])
 
         target_coords = mapcalc.get_coords_from_address(target_address)
 
-       	print(result['color3'])
+       	#print(result['color3'])
 
-        if result['color3']=='' or result['color3']=='3':
+        if result['color3']=='' or (result['color3']=='3' and result['search_term_3']==''):
 
             for i in range(2):
 
@@ -119,7 +118,7 @@ def result():
 
                     result2[search_term_key]=result2[color]
 
-                #print(result2)
+                print(result2,end='zzzzzzzzzzzzzzzzzzzzzzzzzzzz')
 
                 search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key],a)
 
@@ -148,6 +147,7 @@ def result():
                 user_inputs.append(search_item)
 
         print(user_inputs)
+        print(len(user_inputs),end=' here is length ')
 
         list_of_results = []
 
@@ -156,7 +156,11 @@ def result():
             list_of_results.append(mapcalc.result_list(param, target_coords,dist*a))
 
         final_coords = mapcalc.res_locations(list_of_results, user_inputs,target_coords,dist*a)
-
-        # return str(mapcalc.formatted_google_maps_lines(final_coords))
-
-        return render_template("heatmap.html", map_center_lat = target_coords[0], map_center_lng = target_coords[1], points_list = mapcalc.formatted_google_maps_lines(final_coords))
+        
+        #return render_template("toomany.html")
+        if final_coords == 0:
+            return render_template("not_found.html")
+        elif final_coords == 1:
+            return render_template("toomany.html")
+        else:
+            return render_template("heatmap.html", map_center_lat = target_coords[0], map_center_lng = target_coords[1], points_list = mapcalc.formatted_google_maps_lines(final_coords))

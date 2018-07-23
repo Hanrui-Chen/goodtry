@@ -81,7 +81,11 @@ def res_locations(loc_lists, params,co,dis):
         print("Something has clearly gone very wrong and there are fewer results than expected")
         return []
     all_combos = list(itertools.product(*loc_lists))
-
+    print(len(all_combos),end='here we go again')
+    if  (len(all_combos))>140000:
+        return 1
+    elif (len(all_combos))==0:
+        return 0
     # We don't know for sure what exactly the name of the establishment type according to Google will be.
     # e.g. if you search for "nightclub", Google might think the place is primarily a bar but also a night_club
     # so the search term and the place type don't match up 1:1
@@ -123,7 +127,7 @@ def res_locations(loc_lists, params,co,dis):
             # print("Got a distance of", candidate_dist)
 #        if add_item:
 #            final_latlongs.append(candidate_loc)
-            
+        #print('get here')            
         for j in range(len(all_combos[i])):
             t_loc = (all_combos[i][j]['geometry']['location']['lat'], all_combos[i][j]['geometry']['location']['lng'])
             candidate_dist = vincenty(candidate_loc, t_loc).miles
