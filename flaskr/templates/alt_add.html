@@ -35,7 +35,7 @@
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 					<class="radio-group">
 			                        <div class="radio-inline">
-						    <label for="dis" class="fb-text-label"><h4>Distance in </h4></label>
+						    <label for="dis" class="fb-text-label"><h4>Distance in </h4></label><br>
 			                            <input name="unit" id="Miles" required="required" aria-required="true" value="1" type="radio">miles
 			                            <input name="unit" id="Meters" required="required" aria-required="true" value="0.6215" type="radio">kms
 			                            
@@ -44,20 +44,7 @@
 					
 					<label for="target_address" class="fb-text-label"><h4>Search from…</h4></label>
            				<input type="text" class="form-control" name="target_address" id="target_address" required="required" maxlength="140" placeholder="25 Union Square West, New York City, NY 10003">
-					
-					<div class="wrap-input2 validate-input" data-validate = "">
-						<div class="field-search_term">
-				                    <label for="establishment_type" class="fb-text-label">from a: </label>
-				                    <select name="color1" id=1 onchange='checkvalue(this.value,this.id)'> 
-    <option value=''>pick an amenity</option>
-    <option value="Gym">Gym</option>
-    <option value="Restaurant">Restaurant</option>
-    <option value="Laundry">Laundry</option>
-    <option value="1">others</option>
-</select> 
-<input type="text"  class="form-control" name="search_term_1" id="search_term_1" maxlength="40" style='display:none'/>
-				                </div>  
-					</div>
+					<br>
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
@@ -73,21 +60,21 @@
 				                  <input type="range" min="-3" max="3" value="0" class="slider" id="_1" name = "dist_1" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_1_value">1</span>
 				                </div>
 					</div>
-
 					<div class="wrap-input2 validate-input" data-validate = "">
 						<div class="field-search_term">
-				                    <label for="establishment_type" class="fb-text-label">from a: </label>
-				                    <select name="color2" id=2 onchange='checkvalue(this.value,this.id)'> 
+				                    <label for="establishment_type" class="fb-text-label">distance from</label><br>
+				                    <select name="color1" id=1 onchange='checkvalue(this.value,this.id)'> 
     <option value=''>pick an amenity</option>
     <option value="Gym">Gym</option>
     <option value="Restaurant">Restaurant</option>
     <option value="Laundry">Laundry</option>
-    <option value="2">others</option>
+    <option value="1">others</option>
 </select> 
-<input type="text"  class="form-control" name="search_term_2" id="search_term_2" maxlength="40" style='display:none'/>
+<input type="text"  class="form-control" name="search_term_1" id="search_term_1" maxlength="40" style='display:none'/>
 				                </div>  
 					</div>
-					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
+					
+                                        <div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
 			                            <input name="req_type_2" id="closer_than" aria-required="false" value="closer_than" type="radio">
@@ -102,20 +89,20 @@
 				                  <input type="range" min="-3" max="3" value="0" class="slider" id="_2" name = "dist_2" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_2_value">1</span>
 				                </div>
 					</div>
-
-<div class="wrap-input2 validate-input" data-validate = "">
+					<div class="wrap-input2 validate-input" data-validate = "">
 						<div class="field-search_term">
-				                    <label for="establishment_type" class="fb-text-label">from a: </label>
-				                    <select name="color3" id=3 onchange='checkvalue(this.value,this.id)'> 
+				                    <label for="establishment_type" class="fb-text-label">distance from</label><br>
+				                    <select name="color2" id=2 onchange='checkvalue(this.value,this.id)'> 
     <option value=''>pick an amenity</option>
     <option value="Gym">Gym</option>
     <option value="Restaurant">Restaurant</option>
     <option value="Laundry">Laundry</option>
-    <option value="3">others</option>
+    <option value="2">others</option>
 </select> 
-<input type="text"  class="form-control" name="search_term_3" id="search_term_3" maxlength="40" style='display:none'/>
+<input type="text"  class="form-control" name="search_term_2" id="search_term_2" maxlength="40" style='display:none'/>
 				                </div>  
 					</div>
+					
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
@@ -130,6 +117,20 @@
 						<div class="slidecontainer">
 				                  <input type="range" min="-3" max="3" value="0" class="slider" id="_3" name = "dist_3" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_3_value">1</span>
 				                </div>
+					</div>
+
+<div class="wrap-input2 validate-input" data-validate = "">
+						<div class="field-search_term">
+				                    <label for="establishment_type" class="fb-text-label">distance from</label><br>
+				                    <select name="color3" id=3 onchange='checkvalue(this.value,this.id)'> 
+    <option value=''>pick an amenity</option>
+    <option value="Gym">Gym</option>
+    <option value="Restaurant">Restaurant</option>
+    <option value="Laundry">Laundry</option>
+    <option value="3">others</option>
+</select> 
+<input type="text"  class="form-control" name="search_term_3" id="search_term_3" maxlength="40" style='display:none'/>
+				                </div>  
 					</div>
 
 					
@@ -161,7 +162,7 @@
 				
     				var a=num;
 				var h = document.getElementById("myH2");
-    				h.insertAdjacentHTML("afterend", '<div class="wrap-input2 validate-input" data-validate = ""><div class="field-search_term"><label for="establishment_type" class="fb-text-label">from a: </label><select name="color'+a+'" id='+a+' onchange="checkvalue(this.value,this.id)"><option value="">pick an amenity</option> <option value="Gym">Gym</option><option value="Restaurant">Restaurant</option><option value="Laundry">Laundry</option><option value="'+a+'">others</option></select><input type="text"  class="form-control" name="search_term_'+a+'" id="search_term_'+a+'" maxlength="40" style="display:none"/></div></div><div class="wrap-input2 validate-input" data-validate="Please choose an option"><div class="radio-group"><div class="radio-inline"><input name="req_type_'+a+'" id="closer_than" aria-required="false" value="closer_than" type="radio"><label for="closer_or_further-0">closer than</label><input name="req_type_'+a+'" id="further_than" aria-required="false" value="further_than" type="radio"><label for="closer_or_further-1">further than</label></div></div><div class="wrap-input2"><div class="slidecontainer"><input type="range" min="-3" max="3" value="0" class="slider" id="_'+a+'" name = "dist_'+num+'" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_'+a+'_value">1</span></div></div>');
+    				h.insertAdjacentHTML("afterend", '<div class="wrap-input2 validate-input" data-validate="Please choose an option"><div class="radio-group"><div class="radio-inline"><input name="req_type_'+a+'" id="closer_than" aria-required="false" value="closer_than" type="radio"><label for="closer_or_further-0">closer than</label><input name="req_type_'+a+'" id="further_than" aria-required="false" value="further_than" type="radio"><label for="closer_or_further-1">further than</label></div></div><div class="wrap-input2"><div class="slidecontainer"><input type="range" min="-3" max="3" value="0" class="slider" id="_'+a+'" name = "dist_'+num+'" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_'+a+'_value">1</span></div></div><div class="wrap-input2 validate-input" data-validate = ""><div class="field-search_term"><label for="establishment_type" class="fb-text-label">distance from</label><br><select name="color'+a+'" id='+a+' onchange="checkvalue(this.value,this.id)"><option value="">pick an amenity</option> <option value="Gym">Gym</option><option value="Restaurant">Restaurant</option><option value="Laundry">Laundry</option><option value="'+a+'">others</option></select><input type="text"  class="form-control" name="search_term_'+a+'" id="search_term_'+a+'" maxlength="40" style="display:none"/></div></div>');
 				window.num=a+1;
 
 }
