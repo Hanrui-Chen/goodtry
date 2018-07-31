@@ -6,7 +6,7 @@ from flask import Flask, request, session, g, redirect, url_for, abort, render_t
 
 import mapcalc
 
-
+import math
 
 app = Flask(__name__)
 
@@ -56,7 +56,7 @@ print("got here")
 
 def show_form():
 
-    return render_template('alt_add.html')
+    return render_template('alt_ad.html')
 
 
 
@@ -96,6 +96,8 @@ def result():
         print(result)
         dist=float(result['dis'])
 
+        dist=pow(2,dist)
+        
         a=float(result['unit'])
 
         target_coords = mapcalc.get_coords_from_address(target_address)
