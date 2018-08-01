@@ -38,6 +38,7 @@
 			                            <input name="unit" id="Miles" required="required" aria-required="true" value="1" type="radio">miles
 			                            <input name="unit" id="Meters" required="required" aria-required="true" value="0.6215" type="radio">kms
                                                     <br></br>
+                                                    <label><h5>Constraints:</h5></label><br>
 			                            <input type="range" min="-3" max="3" value="0" class="slider" name="dis" id="dis" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="distdis_value">1</span>
 			                            <br>
 						    <label for="target_address" class="fb-text-label">distance from…</label>
@@ -50,6 +51,7 @@
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
+                                                    <span id="_1_">1)&nbsp&nbsp&nbsp</span>
 			                            <input name="req_type_1" id="closer_than" aria-required="false" value="closer_than" type="radio">
 			                            <label for="closer_or_further-0">closer than</label>
 			                            <input name="req_type_1" id="further_than" aria-required="false" value="further_than" type="radio">
@@ -79,6 +81,7 @@
                                         <div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
+                                                    <span id="_2_">2)&nbsp&nbsp&nbsp</span>
 			                            <input name="req_type_2" id="closer_than" aria-required="false" value="closer_than" type="radio">
 			                            <label for="closer_or_further-0">closer than</label>
 			                            <input name="req_type_2" id="further_than" aria-required="false" value="further_than" type="radio">
@@ -108,6 +111,7 @@
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
+                                                    <span id="3)">3)&nbsp&nbsp&nbsp</span>
 			                            <input name="req_type_3" id="closer_than" aria-required="false" value="closer_than" type="radio">
 			                            <label for="closer_or_further-0">closer than</label>
 			                            <input name="req_type_3" id="further_than" aria-required="false" value="further_than" type="radio">
@@ -137,7 +141,7 @@
 
 					
 
-					<h2 id="myH2"></h2>
+					<h6 id="myH2"></h6>
 					<div id="demo" onclick="myFunction()">Click me to add constrains.</div>
 					<div id="no" class="container-contact2-form-btn"><div class="wrap-contact2-form-btn"><div class="contact2-form-bgbtn"></div><button class="contact2-form-btn">Find Someplace Nice</button></div></div></form></div></div></div>
 
@@ -164,8 +168,10 @@
 				
     				var a=num;
 				var h = document.getElementById("myH2");
-    				h.insertAdjacentHTML("afterend", '<div class="wrap-input2 validate-input" data-validate="Please choose an option"><div class="radio-group"><div class="radio-inline"><input name="req_type_'+a+'" id="closer_than" aria-required="false" value="closer_than" type="radio"><label for="closer_or_further-0">closer than</label><input name="req_type_'+a+'" id="further_than" aria-required="false" value="further_than" type="radio"><label for="closer_or_further-1">further than</label></div></div><div class="wrap-input2"><div class="slidecontainer"><input type="range" min="-3" max="3" value="0" class="slider" id="_'+a+'" name = "dist_'+num+'" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_'+a+'_value">1</span></div></div><div class="wrap-input2 validate-input" data-validate = ""><div class="field-search_term"><label for="establishment_type" class="fb-text-label">distance from</label><br><select name="color'+a+'" id='+a+' onchange="checkvalue(this.value,this.id)"><option value="">pick an amenity</option> <option value="Gym">Gym</option><option value="Restaurant">Restaurant</option><option value="Laundry">Laundry</option><option value="'+a+'">others</option></select><input type="text"  class="form-control" name="search_term_'+a+'" id="search_term_'+a+'" maxlength="40" style="display:none"/></div></div>');
-				window.num=a+1;
+    				h.insertAdjacentHTML("beforeend", '<div class="wrap-input2 validate-input" data-validate="Please choose an option"><div class="radio-group"><div class="radio-inline"><span id="'+a+')"></span><input name="req_type_'+a+'" id="closer_than" aria-required="false" value="closer_than" type="radio"><label for="closer_or_further-0">closer than</label><input name="req_type_'+a+'" id="further_than" aria-required="false" value="further_than" type="radio"><label for="closer_or_further-1">further than</label></div></div><div class="wrap-input2"><div class="slidecontainer"><input type="range" min="-3" max="3" value="0" class="slider" id="_'+a+'" name = "dist_'+num+'" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="dist_'+a+'_value">1</span></div></div><div class="wrap-input2 validate-input" data-validate = ""><div class="field-search_term"><label for="establishment_type" class="fb-text-label">distance from</label><br><select name="color'+a+'" id='+a+' onchange="checkvalue(this.value,this.id)"><option value="">pick an amenity</option> <option value="Gym">Gym</option><option value="Restaurant">Restaurant</option><option value="Laundry">Laundry</option><option value="'+a+'">others</option></select><input type="text"  class="form-control" name="search_term_'+a+'" id="search_term_'+a+'" maxlength="40" style="display:none"/></div></div>');
+				var o=document.getElementById(num+')');
+                                o.innerHTML=num+')&nbsp&nbsp&nbsp';
+                                window.num=a+1;
 
 }
 
@@ -192,9 +198,11 @@ for (u=0;u<select.length;u++) {
 }
         }
 	
+
 	function findvalue(b){
 	var slider = document.getElementById(b);
 	var output = document.getElementById("dist"+b+"_value");
+        
 	output.innerHTML = getTrueVal(slider);
 	}
 
