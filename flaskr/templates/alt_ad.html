@@ -37,14 +37,16 @@
 						    <label for="dis" class="fb-text-label"><h4>Distance in </h4></label><br>
 			                            <input name="unit" id="Miles" required="required" aria-required="true" value="1" type="radio">miles
 			                            <input name="unit" id="Meters" required="required" aria-required="true" value="0.6215" type="radio">kms
-                                                    <br>
+                                                    <br></br>
 			                            <input type="range" min="-3" max="3" value="0" class="slider" name="dis" id="dis" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="distdis_value">1</span>
-			                        </div>
+			                            <br>
+						    <label for="target_address" class="fb-text-label">distance from…</label>
+           				            <input type="text" class="form-control" name="target_address" id="target_address" required="required" maxlength="140" placeholder="25 Union Square West, New York City, NY 10003">
+						</div>
 					</div>
 					
-					<label for="target_address" class="fb-text-label"><h4>Search from…</h4></label>
-           				<input type="text" class="form-control" name="target_address" id="target_address" required="required" maxlength="140" placeholder="25 Union Square West, New York City, NY 10003">
-					<br>
+					
+					
 					<div class="wrap-input2 validate-input" data-validate="Please choose an option">
 						<div class="radio-group">
 			                        <div class="radio-inline">
