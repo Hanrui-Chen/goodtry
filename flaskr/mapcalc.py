@@ -115,7 +115,7 @@ def res_locations(loc_lists, params,co,dis):
         # So now we have a candidate for being added to the list of good spots.
         # To see if it deserves to go in or not, calculate the distance of this spot from each establishment
         # If it complies with every instruction we wanted, then add it to the list that the heatmap will draw, hooray!
-        add_item = True
+        add_item = 1
 #        for j in range(len(all_combos[i])):
 #            t_loc = (all_combos[i][j]['geometry']['location']['lat'], all_combos[i][j]['geometry']['location']['lng'])
 #            candidate_dist = vincenty(candidate_loc, t_loc).miles
@@ -137,10 +137,13 @@ def res_locations(loc_lists, params,co,dis):
                 t=-1
             elif params[j]['req_type'] == 'further_than':
                 t=1
-            if candidate_dist -t* params[j]['dist']<0 or di>dis:
-                add_item = False
-        if add_item:
-            final_latlongs.append(candidate_loc)
+            print(t)
+            print (candidate_dist -t* params[j]['dist'])
+            if 100*(candidate_dist -t* params[j]['dist'])<0 or di>dis:
+                add_item = 0
+            
+            if add_item==1:
+                final_latlongs.append(candidate_loc)
 
     return final_latlongs
     # print(len(final_latlongs))
