@@ -93,7 +93,7 @@ def result():
 
         le=int((len(result)-3)/4)
 
-        print(result)
+        #print(result)
         dist=float(result['dis'])
 
         dist=pow(2,dist)
@@ -148,8 +148,8 @@ def result():
 
                 user_inputs.append(search_item)
 
-        print(user_inputs)
-        print(len(user_inputs),end=' here is length ')
+        #print(user_inputs)
+        #print(len(user_inputs),end=' here is length ')
 
         list_of_results = []
 
@@ -158,7 +158,7 @@ def result():
             list_of_results.append(mapcalc.result_list(param, target_coords,dist*a))
 
         final_coords = mapcalc.res_locations(list_of_results, user_inputs,target_coords,dist*a)
-        
+        #print(final_coords)
         #return render_template("toomany.html")
         if final_coords == 0:
             return render_template("not_found.html")

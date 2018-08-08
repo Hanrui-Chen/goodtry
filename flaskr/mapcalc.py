@@ -100,8 +100,12 @@ def res_locations(loc_lists, params,co,dis):
     # for i in range(100):
         weights = []
         for n in range(len(all_combos[i])):
-            dist = params[n]['dist']
-            wt = 1/dist
+            if params[n]['req_type'] == 'further_than':
+                wt = params[n]['dist']
+                
+            else:
+                dist = params[n]['dist']
+                wt = 1/dist
             weights.append(wt)
         # so now we know the weights, so we should actually calculate the lat/long of our center point
         COMlat = 0
