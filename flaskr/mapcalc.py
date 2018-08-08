@@ -84,8 +84,6 @@ def res_locations(loc_lists, params,co,dis):
     print(len(all_combos),end='here we go again')
     if  (len(all_combos))>140000:
         return 1
-    elif (len(all_combos))==0:
-        return 0
     # We don't know for sure what exactly the name of the establishment type according to Google will be.
     # e.g. if you search for "nightclub", Google might think the place is primarily a bar but also a night_club
     # so the search term and the place type don't match up 1:1
@@ -148,7 +146,8 @@ def res_locations(loc_lists, params,co,dis):
             
         if add_item==1:
             final_latlongs.append(candidate_loc)
-
+    if len(final_latlongs)==0:
+        return 0
     return final_latlongs
     # print(len(final_latlongs))
     # print(final_latlongs[0])
