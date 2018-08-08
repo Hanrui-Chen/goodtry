@@ -120,7 +120,7 @@ def result():
 
                     result2[search_term_key]=result2[color]
 
-                print(result2,end='zzzzzzzzzzzzzzzzzzzzzzzzzzzz')
+                #print(result2,end='zzzzzzzzzzzzzzzzzzzzzzzzzzzz')
 
                 search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key],a)
 
