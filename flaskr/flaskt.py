@@ -94,7 +94,7 @@ def result():
         le=int((len(result)-3)/4)
 
         #print(result)
-        dist=float(result['dis'])
+        dist=float(result['dis'])/10.0
 
         dist=pow(2,dist)
         
@@ -148,7 +148,7 @@ def result():
 
                 user_inputs.append(search_item)
 
-        #print(user_inputs)
+        print(user_inputs)
         #print(len(user_inputs),end=' here is length ')
 
         list_of_results = []
