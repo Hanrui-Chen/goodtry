@@ -18,6 +18,9 @@ app.debug = True
 
 print("got here")
 
+
+
+
 # Load default config and override config from an environment variable
 
 #app.config.update(dict(
@@ -84,7 +87,15 @@ def result():
 
         user_inputs = []
 
-        target_address = result['target_address']
+       
+
+        if result['target_address']:
+        
+            target_address = result['target_address']
+
+        else:
+
+            target_address = 0
 
 
         #print('a')
@@ -100,9 +111,15 @@ def result():
         
         a=float(result['unit'])
 
-        target_coords = mapcalc.get_coords_from_address(target_address)
+        if target_address != 0:
 
-       	#print(result['color3'])
+            target_coords = mapcalc.get_coords_from_address(target_address)
+
+       	else:
+
+            target_coords = (float(result['lag']),float(result['lng']))
+        
+        #print(result['color3'])
 
         if result['color3']=='' or (result['color3']=='3' and result['search_term_3']==''):
 
@@ -148,7 +165,7 @@ def result():
 
                 user_inputs.append(search_item)
 
-        print(user_inputs)
+        #print(user_inputs)
         #print(len(user_inputs),end=' here is length ')
 
         list_of_results = []

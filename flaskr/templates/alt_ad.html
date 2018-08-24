@@ -41,8 +41,10 @@
                                                     <label><h5>Constraints:</h5></label><br>
 			                            <input type="range" min="-30" max="30" value="0" class="slider" name="dis" id="dis" oninput="findvalue(this.id)">&nbsp&nbsp&nbsp&nbsp<span id="distdis_value">1.00</span>
 			                            <br>
-						    <label for="target_address" class="fb-text-label">distance from…</label>
-           				            <input type="text" class="form-control" name="target_address" id="target_address" required="required" maxlength="140" placeholder="25 Union Square West, New York City, NY 10003">
+						    <label for="target_address" class="fb-text-label">distance from…</label><br>
+           				            <input type="text" name="target_address" id="target_address" size="44" placeholder="Put your address here">&nbspOr&nbsp
+                                                    <input type="text" name="lag" id="laglng" size='8' placeholder="(latitude">&nbsp,&nbsp
+                                                    <input type="text" name="lng" id="laglng" size='8' placeholder="     longtitude)">
 						</div>
 					</div>
 					
