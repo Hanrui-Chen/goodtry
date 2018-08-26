@@ -120,50 +120,30 @@ def result():
             target_coords = (float(result['lag']),float(result['lng']))
         
         #print(result['color3'])
+            
+        for i in range(le):
 
-        if result['color3']=='' or (result['color3']=='3' and result['search_term_3']==''):
+            if result2['color'+str(i+1)]=='':
+      
+                break
 
-            for i in range(2):
+            dist_key = 'dist_' +str(i+1)
 
-                dist_key = 'dist_' +str(i+1)
+            req_type_key = 'req_type_' + str(i+1)
 
-                req_type_key = 'req_type_' + str(i+1)
+            search_term_key = 'search_term_' + str(i+1)
 
-                search_term_key = 'search_term_' + str(i+1)
+            color='color'+str(i+1)
 
-                color='color'+str(i+1)
+            if result2[color]!=str(i+1):
 
-                if result2[color]!=str(i+1):
+                result2[search_term_key]=result2[color]
 
-                    result2[search_term_key]=result2[color]
+            #print(result2,end='zzzzzzzzzzzzzzzzzzzzzzzzzzzz')
 
-                #print(result2,end='zzzzzzzzzzzzzzzzzzzzzzzzzzzz')
+            search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key],a)
 
-                search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key],a)
-
-                user_inputs.append(search_item)
-
-        else:
-
-            for i in range(le):
-
-                dist_key = 'dist_' +str(i+1)
-
-                req_type_key = 'req_type_' + str(i+1)
-
-                search_term_key = 'search_term_' + str(i+1)
-
-                color='color'+str(i+1)
-
-                if result2[color]!=str(i+1):
-
-                    result2[search_term_key]=result2[color]
-
-                #print(result2)
-
-                search_item = mapcalc.add_user_inputs(result2[req_type_key], result2[dist_key], result2[search_term_key],a)
-
-                user_inputs.append(search_item)
+            user_inputs.append(search_item)
 
         #print(user_inputs)
         #print(len(user_inputs),end=' here is length ')
