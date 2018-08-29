@@ -43,8 +43,8 @@
 			                            <br>
 						    <label for="target_address" class="fb-text-label">distance from…</label><br>
            				            <input type="text" name="target_address" id="target_address" size="44" placeholder="Put your address here">&nbspOr&nbsp
-                                                    <input type="text" name="lag" id="laglng" size='8' placeholder="(latitude">&nbsp,&nbsp
-                                                    <input type="text" name="lng" id="laglng" size='8' placeholder="     longtitude)">
+                                                    <input type="text" name="lag" id="lag" size='8' placeholder="(latitude">&nbsp,&nbsp
+                                                    <input type="text" name="lng" id="lng" size='8' placeholder="    longtitude)">
 						</div>
 					</div>
 					
@@ -69,7 +69,7 @@
 					<div class="wrap-input2 validate-input" data-validate = "">
 						<div class="field-search_term">
 				                    <label for="establishment_type" class="fb-text-label">distance from</label><br>
-				                    <select name="color1" id=1 onchange='checkvalue(this.value,this.id)'> 
+				                    <select name="color1" required="required" id=1 onchange='checkvalue(this.value,this.id)'> 
     <option value=''>pick an amenity</option>
     <option value="Gym">Gym</option>
     <option value="Restaurant">Restaurant</option>
@@ -180,10 +180,17 @@
 	function checkvalue(val,id)
 
 	{
+                if(document.getElementById("target_address").value==''&&document.getElementById('lag').value==''&&document.getElementById('lng').value==''){
+			alert("You must enter either address or coordinates")
+                        document.getElementById("target_address").focus();
+                        return false; 
+                        //document.getElementById('lag').required=true;
+                	//document.getElementById('lng').required=true;
+                }
    		for(i=1;i<id+1;i++){
-    		if(i==val)
+    		if(i==val){
     			  document.getElementById('search_term_'+i).style.display='block';	
-               
+                          document.getElementById('search_term_'+i).required = true;}
 			  }
 	
 var select=document.getElementById(id);
