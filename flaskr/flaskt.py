@@ -2,6 +2,8 @@ import os
 
 import sqlite3
 
+import csv
+
 from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
 
 import mapcalc
@@ -157,9 +159,20 @@ def result():
         final_coords = mapcalc.res_locations(list_of_results, user_inputs,target_coords,dist*a)
         #print(final_coords)
         #return render_template("toomany.html")
+        with open("test.csv","w") as csvfile: 
+            
+            writer = csv.writer(csvfile)
+            
+            writer.writerows(final_coords)
+        
         if final_coords == 0:
+        
             return render_template("not_found.html")
+        
         elif final_coords == 1:
+            
             return render_template("toomany.html")
+        
         else:
+            
             return render_template("heatmap.html", map_center_lat = target_coords[0], map_center_lng = target_coords[1], points_list = mapcalc.formatted_google_maps_lines(final_coords))
